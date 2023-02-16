@@ -1,4 +1,4 @@
-import { React, useState, useEffect} from "react";
+import { React, useState} from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
 
@@ -37,7 +37,7 @@ const Search = () => {
 
     return(
         <div className="search d-flex justify-content-center">
-            <form className="d-flex flex-column w-50 align-self-center mt-3" onSubmit={searchPokemon}>
+            <form className="d-flex flex-column align-self-center mt-3" onSubmit={searchPokemon}>
                 <label className="mb-3" htmlFor="pokemonName">Enter Pokemon Name or Pokedex Number</label>
                 <input className="mb-3" type="text" placeholder="Pokemon Name" value={pokemonName} name="pokemonName" onChange={(e)=>setPokemonName(e.target.value)} />
                 { errors ? <p className="red-text">{errors}</p> : null}
